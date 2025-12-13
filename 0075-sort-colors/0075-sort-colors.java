@@ -7,8 +7,9 @@ class Solution {
                 temp=nums[low];
                 nums[low]=nums[mid];
                 nums[mid]=temp;
-                
-                low++,mid++;
+
+                low++;
+                mid++;
             }
             else if(nums[mid]==1){
                 mid++;
