@@ -6,7 +6,6 @@ class Solution {
         int digit = x % 10;
         x /= 10;
 
-        // Check overflow BEFORE updating rev
         if (rev > Integer.MAX_VALUE / 10 || rev < Integer.MIN_VALUE / 10) {
             return 0;
         }
@@ -14,6 +13,6 @@ class Solution {
         rev = rev * 10 + digit;
     }
     return rev;
-    
+
     }
 }
