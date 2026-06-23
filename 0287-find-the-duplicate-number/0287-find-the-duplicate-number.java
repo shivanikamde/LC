@@ -3,11 +3,11 @@ class Solution {
         int[] hash=new int[nums.length+1];
         for(int i=0;i<nums.length;i++){
             // hash index - nums element 
-            if(hash[nums[i]]==0){
-                hash[nums[i]]=1;
+            if(hash[nums[i]]==1){
+                return nums[i];
             }
             else{
-                return nums[i];
+                hash[nums[i]]=1;
             }
         }
         return -1;
