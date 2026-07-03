@@ -2,7 +2,6 @@ class Solution {
     public List<Integer> majorityElement(int[] nums) {
         int n=nums.length;
         int condition=n/3;
-        Arrays.sort(nums);
 
         HashMap<Integer,Integer> hm=new HashMap<>();
         ArrayList<Integer> al=new ArrayList<>();
