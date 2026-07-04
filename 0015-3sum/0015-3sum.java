@@ -2,13 +2,15 @@ class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
         int size=nums.length;
+        int j=0;int k=0;
         List<List<Integer>> outerlist=new ArrayList<>();
         for(int i=0;i<size-2;i++){
             if(i>0 && nums[i]==nums[i-1]){
                 continue;
             }
-            int j=i+1;
-            int k=size-1;
+
+            j=i+1;
+            k=size-1;
 
             while(j<k){
                 int sum=nums[i]+nums[j]+nums[k];
