@@ -1,23 +1,21 @@
 class Solution {
     public int search(int[] nums, int target) {
-        int left=0;
-        int n=nums.length;
-        int right=n-1;
-        int mid=0;
-        int sum=0;
-        while(left<=right){
-            sum=left+right;
-            mid=sum/2;
-            if(nums[mid]==target){
-                return mid;
-            }
-            else if(target<nums[mid]){
-                right=mid-1;
-            }
-            else{
-                left=mid+1;
-            }
-        }
-        return -1;
+        return recursivesearch(nums, target, 0, nums.length - 1);
+    }
+
+    public int recursivesearch(int[] nums, int target, int start, int end) {
+
+        if (start > end)
+            return -1;
+
+        int mid = start + (end - start) / 2;
+
+        if (nums[mid] == target)
+            return mid;
+
+        if (nums[mid] > target)
+            return recursivesearch(nums, target, start, mid - 1);
+
+        return recursivesearch(nums, target, mid + 1, end);
     }
 }
