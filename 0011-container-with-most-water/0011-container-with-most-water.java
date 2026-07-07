@@ -8,9 +8,8 @@ class Solution {
 
         while(right>left){
             totalwater=(right-left)*Math.min(height[left],height[right]);
-            if(totalwater>maxwater){
-                maxwater=totalwater;
-            }
+            maxwater=Math.max(totalwater,maxwater);
+            
             if(height[left]<height[right]){
                 left++;
             }
