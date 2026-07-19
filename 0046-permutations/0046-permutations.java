@@ -4,10 +4,9 @@ class Solution {
         calculatePermutations(nums, 0);
         return outerlist;
     }
-
-    public void calculatePermutations(int[] nums, int i) {
+    public void calculatePermutations(int[] nums, int index) {
         // base case
-        if (i == nums.length) {
+        if (index == nums.length) {
             List<Integer> innerlist = new ArrayList<>();
             for (int a=0;a<nums.length;a++) {
                 innerlist.add(nums[a]);
@@ -15,14 +14,12 @@ class Solution {
             outerlist.add(innerlist);
             return;
         }
-
-        for (int j = i; j < nums.length; j++) {
-            swap(nums, i, j);
-            calculatePermutations(nums, i + 1);
-            swap(nums, i, j);
+        for (int j = index; j < nums.length; j++) {
+            swap(nums, index, j);
+            calculatePermutations(nums, index + 1);
+            swap(nums, index, j);
         }
     }
-
     public void swap(int[] nums, int a, int b) {
         int temp = nums[a];
         nums[a] = nums[b];
